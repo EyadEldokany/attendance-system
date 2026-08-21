@@ -49,8 +49,8 @@ recognition:
   embedding_dim: 512
   # CCTV faces can have lower cosine similarity because of distance, angle,
   # lighting, and partial occlusion.
-  match_threshold: 0.50
-  review_threshold: 0.35
+  match_threshold: 0.40
+  review_threshold: 0.25
   max_embeddings_per_person: 8
   # Small faces in wide CCTV shots need a padded, upscaled crop.
   min_face_size_px: 20

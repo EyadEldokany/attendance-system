@@ -45,3 +45,42 @@
 2026-08-21 15:06:11 | INFO     | attendance.archive | [OUT] 2026-08-13 16:02:17.799800 | track 14 | unknown | confidence=0.00 | status=needs_review
 2026-08-21 15:06:36 | INFO     | attendance.recognizer | Face recognition index built with 6 reference images for 3 employees.
 2026-08-21 15:06:36 | INFO     | attendance.gui.review | Saved 2 face embedding(s) for employee #2 from event #5
+2026-08-21 15:48:08 | INFO     | attendance.timestamp_ocr | Using Tesseract path: C:\Program Files\Tesseract-OCR\tesseract.exe
+2026-08-21 15:49:00 | INFO     | attendance.timestamp_ocr | Using Tesseract path: C:\Program Files\Tesseract-OCR\tesseract.exe
+2026-08-21 15:49:29 | INFO     | attendance.device | Compute device resolved: 'cpu' (requested='auto')
+2026-08-21 15:49:32 | INFO     | attendance.recognizer | Face recognition model loaded: buffalo_l on cpu
+2026-08-21 15:49:44 | INFO     | attendance.detector | Loaded detection model: D:\attendance_system (2)\models\yolov8n.pt on device: cpu
+2026-08-21 15:49:47 | INFO     | attendance.recognizer | Face recognition model loaded: buffalo_l on cpu
+2026-08-21 15:49:47 | WARNING  | attendance.recognizer | Face database is empty - the system will register all cases as 'needs review/naming'.
+2026-08-21 15:49:47 | INFO     | attendance.archive | Recognition index ready with 0 saved embedding(s) for 0 employee(s).
+2026-08-21 15:49:47 | INFO     | attendance.archive | Found 6 video file(s) under C:/Users/ASUS/Downloads/نموذج
+2026-08-21 15:50:14 | INFO     | attendance.archive | Auto-confirmed start time for Video 08-08-2026, 11 02 15 AM (1).mov: 2026-08-06 08:08:58
+2026-08-21 15:50:40 | INFO     | attendance.archive | Auto-confirmed start time for Video 08-08-2026, 11 02 15 AM (2).mov: 2026-08-06 17:48:12
+2026-08-21 15:50:47 | INFO     | attendance.archive | Auto-confirmed start time for Video 08-08-2026, 11 02 15 AM (3).mov: 2026-08-06 17:23:55
+2026-08-21 15:51:16 | INFO     | attendance.archive | Auto-confirmed start time for Video 08-08-2026, 11 02 15 AM.mov: 2026-08-06 09:30:04
+2026-08-21 15:51:23 | INFO     | attendance.archive | Auto-confirmed start time for Video 14-08-2026, 6 20 08 PM (1).mov: 2026-08-13 09:55:42
+2026-08-21 15:51:30 | INFO     | attendance.archive | Auto-confirmed start time for Video 14-08-2026, 6 20 08 PM.mov: 2026-08-13 16:02:10
+2026-08-21 15:51:39 | WARNING  | attendance.recognizer | Face database is empty - the system will register all cases as 'needs review/naming'.
+2026-08-21 15:51:39 | INFO     | attendance.archive | Processing 6 confirmed video(s)...
+2026-08-21 15:51:39 | WARNING  | attendance.recognizer | Face database is empty - the system will register all cases as 'needs review/naming'.
+2026-08-21 15:51:39 | INFO     | attendance.archive | Processing C:\Users\ASUS\Downloads\نموذج\Video 08-08-2026, 11 02 15 AM (1).mov (start=2026-08-06 08:08:58, fps=15.0)
+2026-08-21 15:52:00 | INFO     | attendance.archive | [IN] 2026-08-06 08:09:14 | track 1 | unknown | confidence=0.00 | status=needs_review
+2026-08-21 15:52:09 | INFO     | attendance.recognizer | Face recognition index built with 1 reference images for 1 employees.
+2026-08-21 15:52:40 | INFO     | attendance.recognizer | Face recognition index built with 1 reference images for 1 employees.
+2026-08-21 15:52:40 | INFO     | attendance.archive | Processing C:\Users\ASUS\Downloads\نموذج\Video 08-08-2026, 11 02 15 AM (2).mov (start=2026-08-06 17:48:12, fps=15.0)
+2026-08-21 15:52:49 | INFO     | attendance.archive | [OUT] 2026-08-06 17:48:22.999930 | track 8 | employee #1 | confidence=0.53 | status=confirmed
+2026-08-21 15:53:20 | INFO     | attendance.recognizer | Face recognition index built with 1 reference images for 1 employees.
+2026-08-21 15:53:20 | INFO     | attendance.archive | Processing C:\Users\ASUS\Downloads\نموذج\Video 08-08-2026, 11 02 15 AM (3).mov (start=2026-08-06 17:23:55, fps=15.0)
+2026-08-21 15:53:59 | INFO     | attendance.recognizer | Face recognition index built with 1 reference images for 1 employees.
+2026-08-21 15:53:59 | INFO     | attendance.archive | Processing C:\Users\ASUS\Downloads\نموذج\Video 08-08-2026, 11 02 15 AM.mov (start=2026-08-06 09:30:04, fps=15.0)
+2026-08-21 15:54:09 | INFO     | attendance.archive | [IN] 2026-08-06 09:30:15.600078 | track 11 | unknown | confidence=0.32 | status=needs_review
+2026-08-21 15:54:14 | INFO     | attendance.recognizer | Face recognition index built with 2 reference images for 2 employees.
+2026-08-21 15:54:37 | INFO     | attendance.recognizer | Face recognition index built with 2 reference images for 2 employees.
+2026-08-21 15:54:37 | INFO     | attendance.archive | Processing C:\Users\ASUS\Downloads\نموذج\Video 14-08-2026, 6 20 08 PM (1).mov (start=2026-08-13 09:55:42, fps=15.0)
+2026-08-21 15:54:50 | INFO     | attendance.archive | [IN] 2026-08-13 09:55:57.799713 | track 14 | unknown | confidence=0.35 | status=needs_review
+2026-08-21 15:55:05 | INFO     | attendance.recognizer | Face recognition index built with 3 reference images for 3 employees.
+2026-08-21 15:55:19 | INFO     | attendance.recognizer | Face recognition index built with 3 reference images for 3 employees.
+2026-08-21 15:55:19 | INFO     | attendance.archive | Processing C:\Users\ASUS\Downloads\نموذج\Video 14-08-2026, 6 20 08 PM.mov (start=2026-08-13 16:02:10, fps=15.0)
+2026-08-21 15:55:25 | INFO     | attendance.archive | [OUT] 2026-08-13 16:02:17.799800 | track 14 | employee #3 | confidence=0.43 | status=needs_review
+2026-08-21 15:55:43 | INFO     | attendance.recognizer | Face recognition index built with 5 reference images for 3 employees.
+2026-08-21 15:55:43 | INFO     | attendance.gui.review | Saved 2 face embedding(s) for employee #3 from event #5

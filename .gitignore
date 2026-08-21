@@ -2,3 +2,9 @@
 __pycache__/
 dist/
 build/
+enrollment_faces/
+archive_thumbnails/
+exports/
+data/
+logs/
+attendance.db

@@ -231,6 +231,9 @@ class ArchiveProcessor:
                 logger.info("Archive processing stopped by user.")
                 return
             try:
+                # Rebuild index before each video so newly labeled employees
+                # (from the Review tab) are picked up for subsequent videos.
+                self.recognizer.rebuild_index(self.db.get_all_embeddings())
                 self._process_one_video(video, v_idx, len(videos), progress_callback, stop_event, frame_callback)
                 self.db.mark_video_processed(video["video_id"])
             except Exception as e:
