@@ -1,0 +1,98 @@
+
+
+camera:
+  source: "rtsp://username:password@192.168.1.64:554/stream1"
+  reconnect_attempts: 10          
+  reconnect_delay_seconds: 5
+  process_every_n_frames: 3      
+  frame_width: 1280             
+  frame_height: 720
+
+# Archive mode: analyze a folder of pre-recorded footage instead of a live
+# camera stream. Videos aren't named with their recording date, so the
+# system reads the burned-in on-screen timestamp instead - see
+# src/timestamp_ocr.py and src/archive_pipeline.py for how this works and
+# why it requires a quick one-time human confirmation per video file.
+archive:
+  # Where the burned-in date/time overlay sits on the frame, as ratios
+  # (x1, y1, x2, y2) of the full frame width/height. Set this with
+  # setup_timestamp_region.py - do not edit by hand.
+  timestamp_region: [0.02, 0.955, 0.30, 0.995]
+  thumbnails_dir: "archive_thumbnails"
+  # Only needed if pytesseract can't find the Tesseract-OCR engine
+  # automatically (common on Windows if it's not on PATH). Leave blank to
+  # use the default auto-detection. Example:
+  # tesseract_cmd: "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+  tesseract_cmd: ""
+
+door_line:
+
+  point1: [0.5, 0.0]
+  point2: [0.5, 1.0]
+  entry_direction: "positive_to_negative"
+  min_crossing_confidence_frames: 3   
+
+detection:
+  model_path: "models/yolov8n.pt"
+  confidence_threshold: 0.5
+  # Prefer CUDA when available; automatically fall back to CPU otherwise.
+  device: "auto"
+
+tracking:
+  tracker_type: "bytetrack"
+  track_buffer: 60     
+
+recognition:
+  model_name: "buffalo_l"
+  model_root: "~/.insightface"
+  detector: "scrfd"
+  embedding_dim: 512
+  # CCTV faces can have lower cosine similarity because of distance, angle,
+  # lighting, and partial occlusion.
+  match_threshold: 0.50
+  review_threshold: 0.35
+  max_embeddings_per_person: 8
+  # Small faces in wide CCTV shots need a padded, upscaled crop.
+  min_face_size_px: 20
+  face_crop_padding: 0.20
+  face_crop_scale: 2.0
+  # Scan the entire room periodically and cache the clearest face per track.
+  face_sample_interval: 5
+
+enrollment:
+  mode: "auto_learn"               
+  auto_learn_days: 3               
+  require_manual_labeling: true    
+  # Show a person after the first usable face capture; more samples can still
+  # be collected before assignment.
+  min_captures_before_prompt: 1
+
+database:
+  sqlite_path: "data/attendance.db"
+
+excel_sync:
+  enabled: true
+  excel_path: "exports/attendance_log.xlsx"
+  sync_mode: "on_event"          
+  sync_interval_seconds: 60      
+  retry_on_file_locked: true       
+  retry_delay_seconds: 10
+  retry_max_attempts: 30
+
+logging:
+  log_dir: "logs"
+  level: "INFO"
+  max_log_size_mb: 20
+  backup_count: 10
+
+app:
+  language: "en"
+  # "archive": no live camera connection at startup - the GUI opens straight
+  #   into a mode built around processing a folder of pre-recorded footage
+  #   (Menu/button: "Process Archive Footage"). This is the current mode for
+  #   this deployment.
+  # "live": connects to the RTSP camera in `camera.source` at startup and
+  #   shows a live feed, like the original real-time design.
+  mode: "archive"
+  run_as_service: true
+  auto_restart_on_crash: true
