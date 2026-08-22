@@ -88,7 +88,7 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    console=True,            # retain a console so client startup errors are visible
+    console=False,            # retain a console so client startup errors are visible
     icon=str(ROOT / "assets" / "icon.ico") if (ROOT / "assets" / "icon.ico").exists() else None,
 )
 
